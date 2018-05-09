@@ -1,0 +1,40 @@
+.home{
+  background: var(--white);
+  display: grid;
+  grid-template-columns: repeat(4, [col-start] minmax(min-content, 25vw) [col-end]);
+}
+.intro--wrapper{
+  grid-column: 1 / -1;
+  border-radius: 1em;
+  min-height: 400px;
+  margin: 0 auto 10rem;
+  max-width: 75%;
+  .intro{
+    border-radius: 50%;
+    text-align: center;
+  }
+  h1, h2, h3, h4{
+    color: var(--main-color);
+  }    
+  h4{
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  img{
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;    
+  }
+  p{
+    display: inline-block;
+    color: var(--black);
+    text-align: center;
+    max-width: 55%;
+  }
+}
+.panel{
+  background: var(--lightgreen);
+}
+footer{
+  background: var(--main-color);
+}

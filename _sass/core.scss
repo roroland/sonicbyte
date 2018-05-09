@@ -12,6 +12,13 @@ dl, dd, ol, ul, figure {
 *::before{
   box-sizing: inherit;
 }
+:root{
+  --white: #F7F9F9;
+  --black: #505050;
+  --grey: #E5E5E5;
+  --lightgreen: #EAEAEA;
+  --main-color: #EA507C; 
+}
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
@@ -29,14 +36,14 @@ body{
   font-family: 'Roboto', sans-serif;
   line-height: 1.5;
   transition: all 1s;
-  grid-template-columns: [content-start] repeat(8, minmax(min-content, 1fr)) [content-end fixed-start] 5vw [fixed-end];
-  grid-template-rows: [header-top] 10vh [header-bottom content-top] min-content [content-bottom footer-top] min-content [footer-bottom];
+  grid-template-columns: [content-start] 1fr [content-end fixed-start] 3vw [fixed-end];
+  grid-template-rows: [header-top] 25vh [header-bottom content-top] min-content [content-bottom footer-top] min-content [footer-bottom];
   align-content: space-between;
   &.change{
-    grid-template-columns: [content-start] repeat(8, minmax(min-content, 1fr)) [content-end fixed-start] 50vw [fixed-end];
+    grid-template-columns: [content-start] 1fr [content-end fixed-start] 25vw [fixed-end];
   }
   @media only screen and (max-width: 48em) {
-    grid-template-columns: [content-start] repeat(8, minmax(min-content, 1fr)) [content-end];
+    grid-template-columns: [content-start] 1fr [content-end];
   }  
 }
 h1 {
@@ -53,23 +60,22 @@ h4 {font-size: 1em;}
 small, .font_small {font-size: 0.75em;}
 
 .site-header{
-  background: #e8e8e8;
+  background: var(--white);
+  color: var(--black);
   grid-column: content-start / content-end;
   grid-row: header-top / header-bottom;
   transition: all 1s;
   min-height: 1px;
+  text-align: center;
   padding: 1em;
   z-index: 999;
-  
-  .site-title{
-    grid-column: 1 / 2;
-  }
+
   @media only screen and (max-width: 48em) {
     display: none;
   }
 }
 .site-nav{
-  background: #505050;
+  background: var(--grey);
   grid-column: fixed-start / fixed-end;
   grid-row: header-top / footer-bottom;
   transition: all 1s;
@@ -103,33 +109,9 @@ small, .font_small {font-size: 0.75em;}
 }
 .page-content{
   grid-column: content-start / content-end;
-  padding: 1.5rem;
-  .intro{
-    border-radius: 50%;
-    min-height: 400px;
-    margin: 6rem auto;
-    max-width: 65%;
-    h1, h2, h3, h4{
-      text-align: right;
-    }    
-    h4{
-      margin-bottom: 1.5rem;
-    }
-    img{
-      border-radius: 50%;
-      float: right;
-      shape-outside: circle(50%);
-      max-width: 300px;
-      max-height: 300px;    
-      padding: 0 0 0 2rem;
-    }
-    p{
-      text-align: right;
-    }
-  }
 }
+
 .site-footer{
-  outline: 1px solid blue;
   grid-column: content-start / content-end;
   grid-row: footer-top / footer-bottom;
   padding: 1em 1em 2em;
