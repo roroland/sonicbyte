@@ -18,6 +18,7 @@ dl, dd, ol, ul, figure {
   --grey: #E5E5E5;
   --lightgreen: #EAEAEA;
   --main-color: #EA507C; 
+  --blue: #BFD7EA;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -26,93 +27,20 @@ dl, dd, ol, ul, figure {
 
 html{
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 62.5% // 100/62.5 = 1em / 10px;
 }
 body{
-  display: grid;
   min-height: 100vh;
   font-size: 16px; 
   font-size: 1.6rem; 
   font-family: 'Roboto', sans-serif;
   line-height: 1.5;
   transition: all 1s;
-  grid-template-columns: [content-start] 1fr [content-end fixed-start] 3vw [fixed-end];
-  grid-template-rows: [header-top] 25vh [header-bottom content-top] min-content [content-bottom footer-top] min-content [footer-bottom];
-  align-content: space-between;
-  &.change{
-    grid-template-columns: [content-start] 1fr [content-end fixed-start] 25vw [fixed-end];
-  }
-  @media only screen and (max-width: 48em) {
-    grid-template-columns: [content-start] 1fr [content-end];
-  }  
 }
-h1 {
-  margin-top: 0;
-  font-size: 3.375em;
-}
-
-h2 {font-size: 2.25em;}
-
-h3 {font-size: 1.5em;}
-
-h4 {font-size: 1em;}
-
-small, .font_small {font-size: 0.75em;}
-
-.site-header{
-  background: var(--white);
-  color: var(--black);
-  grid-column: content-start / content-end;
-  grid-row: header-top / header-bottom;
-  transition: all 1s;
-  min-height: 1px;
-  text-align: center;
-  padding: 1em;
-  z-index: 999;
-
-  @media only screen and (max-width: 48em) {
-    display: none;
+.intro--wrapper {
+  display: grid;
+  grid-template-rows: 4.7em repeat(7, 1fr);
+  div{
+    outline: 1px solid red;
   }
-}
-.site-nav{
-  background: var(--grey);
-  grid-column: fixed-start / fixed-end;
-  grid-row: header-top / footer-bottom;
-  transition: all 1s;
-  
-  label{
-    cursor: pointer;
-  }
-  .nav-menu,
-  .nav-trigger{
-    display: none;
-  }
-  .nav-trigger{
-    position: relative;
-  }
-  .nav-menu{
-    background: green;
-    position: absolute;
-  }
-  .nav-trigger:checked ~ .nav-menu{
-    display: block;
-  }
-  svg{
-    height: 32px;
-    max-width: 100%;
-  }
-  
-  @media only screen and (max-width: 48em) {
-    grid-column: content-start / content-end;
-    grid-row: header-top / header-bottom;
-  }
-}
-.page-content{
-  grid-column: content-start / content-end;
-}
-
-.site-footer{
-  grid-column: content-start / content-end;
-  grid-row: footer-top / footer-bottom;
-  padding: 1em 1em 2em;
 }
