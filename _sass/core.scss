@@ -1,9 +1,7 @@
 /**
 * Reset some basic elements
 */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
+* {
   margin: 0;
   padding: 0;
 }
@@ -27,24 +25,49 @@ dl, dd, ol, ul, figure {
 
 html{
   box-sizing: border-box;
-  font-size: 62.5% // 100/62.5 = 1em / 10px;
+  font-size: 100%;
 }
 body{
   min-height: 100vh;
-  font-size: 16px; 
-  font-size: 1.6rem; 
   font-family: 'Roboto', sans-serif;
   line-height: 1.5;
   transition: all 1s;
   margin: 2em;
 }
+h1 {
+  font-size: 3.051rem;
+}
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {  
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p{
+  font-size: 1rem;
+}
+
 .intro--wrapper {
   display: grid;
-  grid-template-columns: [edgeLeft-start] 1fr [edgeLeft-end];
+  grid-template-columns: 1fr;
 }
 .mainHeader{
   display: grid;
-  grid-column: edgeLeft-start / edgeLeft-end;
+  grid-column: 1 / -1;
   
   grid-template-columns: [col1Header-start] 8em [col1Header-end spc1Header-start] 1fr [spc1Header-end mainHeader-start] minmax(5em, 30em) [mainHeader-end spc2Header-start] 1fr [spc2Header-end col2Header-start] 8em [col2Header-end];
   
@@ -85,11 +108,63 @@ body{
     grid-row: pic-start / pic-end;
     z-index: 10;    
   }
-
+  
   .about{
     grid-column: mainHeader-start / mainHeader-end;
     grid-row: about-start / about-end;
     outline: 1px solid red;
-    
+  }
+}
+
+.skills{
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
+  grid-template-rows: repeat(4, min-content);
+  h2{
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    outline: 1px solid red;
+    text-align: center;
+  }
+  p{
+    grid-column: col-start 4 / col-start 10;
+    outline: 1px solid red;
+    &:first-of-type{
+      grid-row: 2 / 3;
+    }
+  }
+  .skills-wrapper{
+    display: flex;
+    grid-column: col-start 4 / col-start 10;
+    list-style: none;
+    z-index: 10;    
+
+    &.skills-main{
+      grid-row: 3 / 4;
+      justify-content: flex-end;
+      outline: 1px solid red;
+    }
+    &.skills-secondary{
+      grid-row: 5 / 6;
+      justify-content: flex-start;
+      outline: 1px solid blue;
+    }
+    .skill{
+      outline: 1px solid purple;
+    }
+  }
+  .deco{
+    grid-column: 1 / col-start 10;
+    grid-row: 3 / 4;
+    z-index: 0;    
+    background: #BFD7EA;
+    min-height: 100px;
+  }
+  .deco2{
+    grid-column: col-start 4 / -1;
+    grid-row: 5 / 6;
+    z-index: 0;    
+    background: #BFD7EA;
+    min-height: 100px;
   }
 }
