@@ -12,14 +12,16 @@
 }
 :root{
   --white: #F7F9F9;
-  --black: #505050;
+  --black: #4E5962;
   --grey: #E5E5E5;
   --lightgreen: #EAEAEA;
   --main-color: #EA507C; 
   --blue: #BFD7EA;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+$component-space: 1em;
+
+@import url('https://fonts.googleapis.com/css?family=Roboto|Audiowide');
 
 // Custom properties
 
@@ -34,18 +36,22 @@ body{
   transition: all 1s;
   margin: 2em;
 }
-h1 {
+h1,
+.h1 {
   font-size: 3.051rem;
 }
-h2 {
+h2,
+.h2 {
   font-size: 2.441rem;
 }
 
-h3 {  
+h3,
+.h3 {  
   font-size: 1.953rem;
 }
 
-h4 {
+h4,
+.h4 {
   font-size: 1.563rem;
 }
 
@@ -71,31 +77,54 @@ p{
   
   grid-template-columns: [col1Header-start] 8em [col1Header-end spc1Header-start] 1fr [spc1Header-end mainHeader-start] minmax(5em, 30em) [mainHeader-end spc2Header-start] 1fr [spc2Header-end col2Header-start] 8em [col2Header-end];
   
-  grid-template-rows: [top-start] 3em [top-end bg-start] 300px [bg-end pic-start] min-content [pic-end about-start] 400px [about-end];
+  grid-template-rows: [top-start] min-content [top-end bg-start] 500px [bg-end pic-start] min-content [pic-end about-start] 400px [about-end];
   
   justify-content: center;
   .subHeader{
+    background: var(--main-color);
     grid-column: col1Header-start / col2Header-end;
     grid-row: top-start / top-end;
-    outline: 1px solid blue;
     z-index: 10;
+    p{
+      color: var(--white);
+      padding: $component-space;
+      font-weight: 700;
+      text-align: center;
+    }
   }
-  .menu{
+  &-menu{
     grid-column: col2Header-start / col2Header-end;
     grid-row: top-start / about-end;
-    outline: 1px solid violet;
     z-index: 10;
   }  
-  .title{
+  &-title--wrapper{
+    background: var(--black);
+    display: flex;
     grid-column: col1Header-start / col1Header-end;
     grid-row: top-start / about-end;
-    outline: 1px solid green;
-    writing-mode: tb-rl;
-    // transform: rotate(-180deg);
     z-index: 10;
+    justify-content: flex-start;
+    align-content: flex-start;
+    .title{
+      align-self: flex-start;
+      color: var(--white);
+      writing-mode: tb;
+      transform: rotate(-180deg);
+      margin-top: $component-space*2;
+      padding: $component-space 0;
+      width: 100%;
+      h1{
+        font-family: 'Audiowide', sans-serif;
+        font-weight: normal;
+      }
+      h2{
+        font-weight: 400;
+      }
+    }
   }
   section{
-    background: palegoldenrod;
+    background: url('/assets/img/bg-header.jpg') no-repeat;
+    background-size: cover;
     grid-column: col1Header-start / col2Header-end;
     grid-row: top-start / bg-end;
     z-index: 0;
@@ -109,7 +138,7 @@ p{
     z-index: 10;    
   }
   
-  .about{
+  .aboutMe{
     grid-column: mainHeader-start / mainHeader-end;
     grid-row: about-start / about-end;
     outline: 1px solid red;
@@ -119,18 +148,21 @@ p{
 .skills{
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
-  grid-template-rows: repeat(4, min-content);
+  grid-template-rows: repeat(2, min-content) 100px min-content 100px;
+  grid-row-gap: 2rem;
+  padding: 2rem 0 5rem;
+  outline: 1px solid blue;
   h2{
     grid-column: 1 / -1;
     grid-row: 1 / 2;
-    outline: 1px solid red;
     text-align: center;
   }
   p{
     grid-column: col-start 4 / col-start 10;
-    outline: 1px solid red;
+    text-align: right;
     &:first-of-type{
       grid-row: 2 / 3;
+      text-align: left;
     }
   }
   .skills-wrapper{
@@ -138,16 +170,15 @@ p{
     grid-column: col-start 4 / col-start 10;
     list-style: none;
     z-index: 10;    
-
+    outline: 1px solid red;
+    
     &.skills-main{
       grid-row: 3 / 4;
       justify-content: flex-end;
-      outline: 1px solid red;
     }
     &.skills-secondary{
       grid-row: 5 / 6;
       justify-content: flex-start;
-      outline: 1px solid blue;
     }
     .skill{
       outline: 1px solid purple;
@@ -167,4 +198,29 @@ p{
     background: #BFD7EA;
     min-height: 100px;
   }
+}
+
+.work{
+  display: grid;
+  grid-template-columns: [col1Header-start] 8em [col1Header-end spc1Header-start] 1fr [spc1Header-end mainHeader-start] minmax(5em, 30em) [mainHeader-end spc2Header-start] 1fr [spc2Header-end col2Header-start] 8em [col2Header-end];
+  h2{
+    grid-column: mainHeader-start / mainHeader-end;
+    text-align: center;
+  }
+  .aboutWork{
+    grid-column: mainHeader-start / mainHeader-end;
+    grid-row: about-start / about-end;
+    outline: 1px solid red;
+  }
+}
+
+.work-portfolio{
+  display: grid;
+  grid-template-columns: 1fr  minmax(5em, 30em)  1fr;
+  outline: 1px solid red;
+}
+.testimonials{
+  display: grid;
+  grid-template-columns: 1fr  minmax(5em, 30em)  1fr;
+  outline: 1px solid red;
 }
