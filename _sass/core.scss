@@ -12,10 +12,10 @@
 }
 :root{
   --white: #F7F9F9;
-  --black: #4E5962;
+  --black: 78, 89, 98;
   --grey: #E5E5E5;
   --lightgreen: #EAEAEA;
-  --main-color: #EA507C; 
+  --main-color: 234, 80, 124;
   --blue: #BFD7EA;
 }
 
@@ -34,7 +34,6 @@ body{
   font-family: 'Roboto', sans-serif;
   line-height: 1.5;
   transition: all 1s;
-  margin: 2em;
 }
 h1,
 .h1 {
@@ -81,7 +80,7 @@ p{
   
   justify-content: center;
   .subHeader{
-    background: var(--main-color);
+    background: rgba(var(--main-color), .75);
     grid-column: col1Header-start / col2Header-end;
     grid-row: top-start / top-end;
     z-index: 10;
@@ -98,7 +97,7 @@ p{
     z-index: 10;
   }  
   &-title--wrapper{
-    background: var(--black);
+    background: rgba(var(--black), .75);
     display: flex;
     grid-column: col1Header-start / col1Header-end;
     grid-row: top-start / about-end;
@@ -146,20 +145,31 @@ p{
 }
 
 .skills{
+  background-image: linear-gradient(
+  to right top, transparent 0%,
+  var(--white) 50%,
+  rgba(var(--main-color)) 50%,
+  rgba(var(--main-color, .8)) 100%),
+  url('/assets/img/bg-section.png');
+  background-size: cover; 
+  background-blend-mode: multiply;
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
-  grid-template-rows: repeat(2, min-content) 100px min-content 100px;
+  grid-template-rows: 100px 50px min-content 50px min-content max-content;
   grid-row-gap: 2rem;
   padding: 2rem 0 5rem;
   outline: 1px solid blue;
+  min-height: 900px;
   h2{
     grid-column: 1 / -1;
     grid-row: 1 / 2;
     text-align: center;
   }
-  p{
+  h4{
+    color: var(--white);
     grid-column: col-start 4 / col-start 10;
     text-align: right;
+    font-weight: 600;
     &:first-of-type{
       grid-row: 2 / 3;
       text-align: left;
@@ -169,8 +179,8 @@ p{
     display: flex;
     grid-column: col-start 4 / col-start 10;
     list-style: none;
+    padding: $component-space;
     z-index: 10;    
-    outline: 1px solid red;
     
     &.skills-main{
       grid-row: 3 / 4;
@@ -181,7 +191,8 @@ p{
       justify-content: flex-start;
     }
     .skill{
-      outline: 1px solid purple;
+      padding: $component-space;
+      min-height: 120px;
     }
   }
   .deco{
