@@ -1,0 +1,88 @@
+/**
+* Reset some basic elements
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*::after,
+*::before{
+  box-sizing: inherit;
+}
+:root{
+  --white: 247, 249, 249;
+  --black: 78, 89, 98;
+  --dark: #505050;
+  --grey: #E5E5E5;
+  --light-grey: #D8D8D8;
+  --lightgreen: #EAEAEA;
+  --main-color: 234, 80, 124;
+  --blue: #BFD7EA;
+}
+
+$component-space: 1em;
+$component-inner: 2rem 0 5rem;
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800');
+
+// Custom properties
+
+html{
+  box-sizing: border-box;
+  font-size: 100%;
+}
+body{
+  background: rgb(var(--white));
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+  transition: all 1s;
+}
+h1,
+.h1 {
+  font-size: 3.051rem;
+}
+h2,
+.h2 {
+  font-size: 2.441rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+}
+
+h3,
+.h3 {  
+  font-size: 1.953rem;
+}
+
+h4,
+.h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p:not([class]){
+  color: var(--dark);
+  font-size: 1.25rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  margin-bottom: $component-space;
+}
+strong{
+  font-weight: 600;
+}
+a[href]:not([class]) {
+  color: rgba(var(--white));
+  text-decoration: none;
+}
+.intro--wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+}

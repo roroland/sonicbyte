@@ -1,0 +1,88 @@
+.mainHeader{
+  display: grid;
+  grid-column: 1 / -1;
+  
+  grid-template-columns: [col1Header-start] 8em [col1Header-end spc1Header-start] 1fr [spc1Header-end mainHeader-start] minmax(5em, 30em) [mainHeader-end spc2Header-start] 1fr [spc2Header-end col2Header-start] 8em [col2Header-end];
+  
+  grid-template-rows: [top-start] min-content [top-end bg-start] 500px [bg-end pic-start] min-content [pic-end about-start] 400px [about-end];
+  
+  justify-content: center;
+  .subHeader{
+    background: rgba(var(--main-color), .75);
+    grid-column: col1Header-start / col2Header-end;
+    grid-row: top-start / top-end;
+    z-index: 10;
+    p{
+      color: rgba(var(--white));
+      padding: $component-space;
+      margin-bottom: 0;
+      font-weight: 300;
+      text-align: center;
+    }
+  }
+  &-menu{
+    grid-column: col2Header-start / col2Header-end;
+    grid-row: top-start / about-end;
+    z-index: 10;
+    color: rgba(var(--white));
+    
+    ul{
+      list-style: none;
+      padding: 9rem 0 0;
+    }
+    li{
+      margin: $component-space*2 0;
+      line-height: 2;
+    }
+    a{
+      font-weight: 800;
+      text-shadow: 0 0 2px rgb(50,50,50);
+    }
+  }  
+  &-title--wrapper{
+    background: rgba(var(--black), .75);
+    display: flex;
+    grid-column: col1Header-start / col1Header-end;
+    grid-row: top-start / about-end;
+    z-index: 10;
+    justify-content: flex-start;
+    align-content: flex-start;
+    .title{
+      align-self: flex-start;
+      color: rgba(var(--white));
+      writing-mode: tb;
+      transform: rotate(-180deg);
+      margin-top: $component-space*2;
+      padding: 0 0 8rem 0;
+      width: 100%;
+      h1{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 800;
+      }
+      h2{
+        font-weight: 300;
+      }
+    }
+  }
+  section{
+    background: url('/assets/img/bg-header.jpg') no-repeat;
+    background-size: cover;
+    grid-column: col1Header-start / col2Header-end;
+    grid-row: top-start / bg-end;
+    z-index: 0;
+  }
+  img{
+    align-self: flex-end;
+    margin: -25% auto 0;
+    max-width: 25vw;
+    grid-column: mainHeader-start / mainHeader-end;
+    grid-row: pic-start / pic-end;
+    z-index: 10;    
+  }
+  
+  .aboutMe{
+    grid-column: mainHeader-start / mainHeader-end;
+    grid-row: about-start / about-end;
+    padding: $component-inner;
+  }
+}
