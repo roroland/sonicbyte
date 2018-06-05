@@ -1,0 +1,27 @@
+.contact{
+  background: $dark;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  padding: $component-inner;
+  justify-content: center;
+  
+  h2{
+    color: $white;
+    grid-column: 2 / 3;
+    padding: 0 0 $component-space;
+    text-align: center;
+  }
+  ul{
+    grid-column: 1 / -1;
+    margin: $component-space*2 0 0;
+    li{
+      list-style: none;
+      display: inline-block;
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 600;
+      width: 32vw;
+    }
+  }
+}

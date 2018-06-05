@@ -8,12 +8,12 @@
   
   justify-content: center;
   .subHeader{
-    background: rgba(var(--main-color), .75);
+    background: rgba($main-color, .75);
     grid-column: col1Header-start / col2Header-end;
     grid-row: top-start / top-end;
     z-index: 10;
     p{
-      color: rgba(var(--white));
+      color: $white;
       padding: $component-space;
       margin-bottom: 0;
       font-weight: 300;
@@ -24,7 +24,7 @@
     grid-column: col2Header-start / col2Header-end;
     grid-row: top-start / about-end;
     z-index: 10;
-    color: rgba(var(--white));
+    color: $white;
     
     ul{
       list-style: none;
@@ -40,7 +40,7 @@
     }
   }  
   &-title--wrapper{
-    background: rgba(var(--black), .75);
+    background: rgba($black, .75);
     display: flex;
     grid-column: col1Header-start / col1Header-end;
     grid-row: top-start / about-end;
@@ -49,7 +49,7 @@
     align-content: flex-start;
     .title{
       align-self: flex-start;
-      color: rgba(var(--white));
+      color: $white;
       writing-mode: tb;
       transform: rotate(-180deg);
       margin-top: $component-space*2;

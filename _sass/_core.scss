@@ -10,16 +10,16 @@
 *::before{
   box-sizing: inherit;
 }
-:root{
-  --white: 247, 249, 249;
-  --black: 78, 89, 98;
-  --dark: #505050;
-  --grey: #E5E5E5;
-  --light-grey: #D8D8D8;
-  --lightgreen: #EAEAEA;
-  --main-color: 234, 80, 124;
-  --blue: #BFD7EA;
-}
+
+$black: #4e5962;
+$white: #f7f9f9;
+$dark: #505050;
+$grey: #E5E5E5;
+$light-grey: #D8D8D8;
+$blue: #BFD7EA;
+$light-blue: #AEC4D5;
+$main-color: #ea507c;
+
 
 $component-space: 1em;
 $component-inner: 2rem 0 5rem;
@@ -33,7 +33,7 @@ html{
   font-size: 100%;
 }
 body{
-  background: rgb(var(--white));
+  background: $white;
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5;
@@ -69,7 +69,7 @@ h6 {
 }
 
 p:not([class]){
-  color: var(--dark);
+  color: $dark;
   font-size: 1.25rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
@@ -79,7 +79,7 @@ strong{
   font-weight: 600;
 }
 a[href]:not([class]) {
-  color: rgba(var(--white));
+  color: $white;
   text-decoration: none;
 }
 .intro--wrapper {

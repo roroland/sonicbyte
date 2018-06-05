@@ -22,8 +22,8 @@
 }
 .work-portfolio{
   display: grid;
-  background: var(--light-grey);
-  box-shadow: inset 0 0 3px var(--dark);
+  background: $light-grey;
+  box-shadow: inset 0 0 3px $dark;
   grid-template-columns: repeat( auto-fit, [col-start] minmax(8vw, auto) [col-end] );
   grid-auto-rows: 10vh;
   grid-gap: $component-space;

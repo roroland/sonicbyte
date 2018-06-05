@@ -3,9 +3,9 @@
   display: grid;
   background-image: linear-gradient(
   to right bottom, transparent 0%,
-  rgba(var(--white)) 50%,
-  var(--blue) 50%,
-  var(--blue) 100%);
+  transparent 50%,
+  $blue 50%,
+  $blue 100%);
   grid-template-columns: 1fr  repeat(2, minmax(auto, 28vw)) 1fr;
   padding: $component-inner;
   
@@ -18,7 +18,8 @@
     grid-column: 2 / 4;
     text-align: center;
     margin: 0 0 $component-space*2;
-    font-weight: normal;
+    padding: 0 $component-space*2;
+    font-weight: 300;
   }
   p{
     grid-column: 2 / 4;
@@ -27,14 +28,15 @@
   
   .citeItem{
     position: relative;
-    margin: ($component-space * 2) 0 $component-space;
+    margin: ($component-space * 2) 0;
+    
     &:first-of-type{
-      cite::after{
+      cite::before{
         content: '"';
         position: absolute;
         display: block;
-        left: -5rem;
-        bottom: 0;
+        left: -8vw;
+        top: 0;
         height: 50px;
         width: 50px;
       }
@@ -45,21 +47,30 @@
         position: absolute;
         display: block;
         left: inherit;
-        right: -10rem;
+        left: 60vw;
         bottom: 0;
         height: 50px;
         width: 50px;
       }
     }
     cite{
-      padding: $component-space;
+      color: $black;
       position: relative;
       &::after,
       &::before{
-        font-size: 3.25rem;
+        color: $light-blue;
+        font-size: 10vw;
+        line-height: .5;
       }
       p{
         font-size: .8rem;
+        font-weight: 600;
+        text-align: right;
+        padding: $component-space;
+      }
+      span{
+        display: block;
+        margin-top: $component-space;
         font-weight: 600;
         text-align: right;
       }

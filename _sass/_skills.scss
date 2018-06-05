@@ -1,13 +1,13 @@
 .skills{
   background-image: linear-gradient(
   to right top, transparent 0%,
-  rgba(var(--white)) 50%,
-  rgba(var(--main-color)) 50%,
-  rgba(var(--main-color, .8)) 100%),
+  $white 50%,
+  $main-color 50%,
+  rgba($main-color, .8) 100%),
   url('/assets/img/bg-section.jpg');
   background-size: cover; 
   background-blend-mode: multiply;
-  color: rgba(var(--white));
+  color: $white;
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
   grid-template-rows: 100px 50px min-content 50px min-content max-content;
@@ -24,7 +24,7 @@
     padding: 0 0 $component-space;
   }
   h4{
-    color: rgba(var(--white));
+    color: $white;
     grid-column: col-start 4 / col-start 10;
     text-align: right;
     font-weight: 600;
@@ -58,14 +58,14 @@
     grid-column: 1 / col-start 10;
     grid-row: 3 / 4;
     z-index: 0;    
-    background: rgba(var(--black), .75);
+    background: rgba($black, .75);
     min-height: 100px;
   }
   .deco2{
     grid-column: col-start 4 / -1;
     grid-row: 5 / 6;
     z-index: 0;    
-    background: rgba(var(--black), .75);
+    background: rgba($black, .75);
     min-height: 100px;
   }
 }
