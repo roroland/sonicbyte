@@ -1,8 +1,9 @@
 .mainHeader{
+  background: linear-gradient(to left, rgba($grey, .25) 0, rgba($grey, .25) 15vw, transparent 15vw, transparent 100vw);
   display: grid;
   grid-column: 1 / -1;
   
-  grid-template-columns: [col1Header-start] 8em [col1Header-end spc1Header-start] 1fr [spc1Header-end mainHeader-start] minmax(5em, 30em) [mainHeader-end spc2Header-start] 1fr [spc2Header-end col2Header-start] 8em [col2Header-end];
+  grid-template-columns: [col1Header-start] 8rem [col1Header-end spc1Header-start] 1fr [spc1Header-end mainHeader-start] minmax(5rem, 30rem) [mainHeader-end spc2Header-start] 1fr [spc2Header-end col2Header-start] 8.5rem [col2Header-end];
   
   grid-template-rows: [top-start] min-content [top-end bg-start] 500px [bg-end pic-start] min-content [pic-end about-start] 400px [about-end];
   
@@ -28,7 +29,7 @@
     
     ul{
       list-style: none;
-      padding: 9rem 0 0;
+      padding: 9rem 0 0 1rem;
     }
     li{
       margin: $component-space*2 0;
@@ -83,6 +84,6 @@
   .aboutMe{
     grid-column: mainHeader-start / mainHeader-end;
     grid-row: about-start / about-end;
-    padding: $component-inner;
+    padding: $component-inner; 
   }
 }
