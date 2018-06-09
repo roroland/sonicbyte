@@ -4,7 +4,7 @@
   $white 50%,
   $main-color 50%,
   rgba($main-color, .8) 100%),
-  url('/assets/img/bg-section.jpg');
+  url('../img/bg-section.jpg');
   background-size: cover; 
   background-blend-mode: multiply;
   color: $white;
