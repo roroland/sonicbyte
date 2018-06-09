@@ -74,15 +74,17 @@
     overflow: hidden;
     .work-panel{
       background: $white;
+      border-bottom: 1px solid $grey;
+      border-top: 1px solid $grey;
       padding: $component-space;
       height: 100vh;
       width: 100vw;
       position: absolute;
       &.normal{
-        animation: panel 1s ease-out forwards;
+        animation: panel 1s cubic-bezier(.09,.93,.44,.98) forwards;
       }
       &.reverse{
-        animation: panel 1s ease-out forwards reverse;
+        animation: panel .5s ease-out reverse;
       }
     }
     a{
@@ -93,7 +95,9 @@
       0%{
         opacity: 0;
         left: 100vw;
-        
+      }
+      50%{
+        opacity: .95;
       }
       100%{
         opacity: 1;

@@ -2,7 +2,8 @@ var app = new Vue({
 	delimiters: ["((", "))"],
 	el: '#app',
 	data:{
-		active_el:0
+		active_el: 0,
+		reverse: false
 	},
 	methods:{
 		activate: function(el){
@@ -10,8 +11,7 @@ var app = new Vue({
 		},
 		close: function (el) {
 			el.preventDefault();
-			this.active_el = 0;
-
-		}
+			this.active_el = '';
+		}	
 	}
 })
