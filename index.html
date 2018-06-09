@@ -93,14 +93,17 @@ layout: default
   </div>  
 </div>
 <div class="work-portfolio">
-  
+  <div class="work-wrapper" :class="{ active : active_el == 1 }">
+    {% include job-1.html %}
+  </div> 
+  <div class="work-wrapper" :class="{ active : active_el == 2 }">
+    {% include job-2.html %}
+  </div>  
   <div class="item span-3" @click="activate(1)" :class="{ active : active_el == 1 }">
     <img src="{{site.baseurl}}/assets/img/logos/cdr.png">
-    <p>Now you see me</p>
   </div>
   <div class="item span-3" @click="activate(2)" :class="{ active : active_el == 2 }">
     <img src="{{site.baseurl}}/assets/img/logos/spines.png">
-    <p>Now you see me 2</p>
   </div>
   <div class="item span-2">
     <img src="{{site.baseurl}}/assets/img/logos/iremix.png">
@@ -139,19 +142,19 @@ layout: default
   <h5>Here are some of the testimonials about my work that my colleagues have written about me on my LinkedIn profile</h5>
   <p class="citeItem">
     <cite>Rodrigo is a great front end developer, his work is clean, code readable and flexible. When he commits to getting something done, he does it which has made him a great team member and a reliable person in our project!
-    <span>- Mark Ellul, software engineer</span>
+      <span>- Mark Ellul, software engineer</span>
     </cite>
   </p>
   <p class="citeItem">
-      <cite>Rodrigo es un gran profesional: trabajador y voluntarioso, siempre dispuesto a ayudar. Gracias a su larga experiencia, tiene conocimientos avanzados de maquetación lo que lo convierte en una pieza clave para hacer webs responsive y webapps de gran calidad.
+    <cite>Rodrigo es un gran profesional: trabajador y voluntarioso, siempre dispuesto a ayudar. Gracias a su larga experiencia, tiene conocimientos avanzados de maquetación lo que lo convierte en una pieza clave para hacer webs responsive y webapps de gran calidad.
       <br>
       Es responsable y organizado, sabe trabajar en remoto y a pesar de estar en otra zona horaria en los 4 años que he trabajado con él nunca he tenido ningún problema.
       <span>- Francho Joven Araus, programador</span>
-      </cite>
-    </p>  
+    </cite>
+  </p>  
 </div>
 <footer class="contact">
-    <h2>Contact</h2>
+  <h2>Contact</h2>
   <ul>
     <li><a href="#">LinkedIn</a></li>
     <li><a href="#">Twitter</a></li>

@@ -7,6 +7,11 @@ var app = new Vue({
 	methods:{
 		activate: function(el){
 			this.active_el = el;
+		},
+		close: function (el) {
+			el.preventDefault();
+			this.active_el = 0;
+
 		}
 	}
 })

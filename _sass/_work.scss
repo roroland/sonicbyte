@@ -29,20 +29,12 @@
   grid-gap: $component-space;
   grid-auto-flow: dense;
   padding: 2rem 20vw 5rem;
+  position: relative;
+  
   .item{
     box-shadow: 0 0 1px rgba(50,50,50, .25);
     display: flex;
-    position: relative;
     z-index: 0;
-    &.active{
-      p{
-        display: block;
-      }
-    }
-    p{
-      display: none;
-      position: absolute;
-    }
     &.span-2{
       grid-row-end: span 2;
       grid-column-end: span 2;
@@ -66,5 +58,48 @@
     filter: grayscale(100%);
     max-width: 100%;
     object-fit: contain;
+  }
+  
+  .work-wrapper{
+    display: none;
+    &.active{
+      display: block;
+    }
+  }
+  .work-wrapper{
+    position: absolute;
+    z-index: 99999;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    .work-panel{
+      background: $white;
+      padding: $component-space;
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      &.normal{
+        animation: panel 1s ease-out forwards;
+      }
+      &.reverse{
+        animation: panel 1s ease-out forwards reverse;
+      }
+    }
+    a{
+      display: block;
+      color: $black;
+    }
+    @keyframes panel {
+      0%{
+        opacity: 0;
+        left: 100vw;
+        
+      }
+      100%{
+        opacity: 1;
+        left: 0;
+      }
+    }
+    
   }
 }
