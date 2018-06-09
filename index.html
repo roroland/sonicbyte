@@ -93,11 +93,14 @@ layout: default
   </div>  
 </div>
 <div class="work-portfolio">
-  <div class="item span-3">
+  
+  <div class="item span-3" @click="activate(1)" :class="{ active : active_el == 1 }">
     <img src="/assets/img/logos/cdr.png">
+    <p>Now you see me</p>
   </div>
-  <div class="item span-3">
+  <div class="item span-3" @click="activate(2)" :class="{ active : active_el == 2 }">
     <img src="/assets/img/logos/spines.png">
+    <p>Now you see me 2</p>
   </div>
   <div class="item span-2">
     <img src="/assets/img/logos/iremix.png">
@@ -127,6 +130,9 @@ layout: default
     <img src="/assets/img/logos/musikete.png">
   </div>
   
+</div>
+<div class="test">
+  FUNCAAAAAAAAAA
 </div>
 <div class="testimonials">
   <h2>Testimonials</h2>

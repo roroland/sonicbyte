@@ -2,14 +2,15 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
 {%- include head.html -%}
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
 <body>
-  <main class="intro--wrapper" aria-label="Content">
-    
+  <main class="intro--wrapper" id="app" aria-label="Content">
     {{ content }}
     
   </main>
   
 </body>
+<script src="{{ site.url }}/assets/js/script.js"></script>
 
 </html>
