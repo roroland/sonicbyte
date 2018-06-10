@@ -1,6 +1,8 @@
 <div class="work-wrapper" :class="{ active : active_el == 6 }">
   <div class="work-panel" :class="{ normal : active_el }">
-    <a href="#" @click="close">close</a>
+      <svg class="close" @click="close">
+          <use xlink:href="{{site.baseurl}}/assets/img/sprite.svg#icon-x-circle"></use>
+        </svg>
     <p>JOB -6 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptas ex tenetur accusantium commodi voluptatibus, sunt mollitia earum. Optio, veniam. Dolores voluptatum adipisci odit omnis?</p>
   </div>
 </div>
