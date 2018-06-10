@@ -11,14 +11,11 @@
   
   h2{
     grid-column: 2 / 4;
-    padding: 0 0 $component-space;
     text-align: center;
   }
   h5{
     grid-column: 2 / 4;
     text-align: center;
-    margin: 0 0 $component-space*2;
-    padding: 0 $component-space*2;
     font-weight: 300;
   }
   p{
