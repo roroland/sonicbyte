@@ -93,43 +93,48 @@ layout: default
   </div>  
 </div>
 <div class="work-portfolio">
-  <div class="work-wrapper" :class="{ active : active_el == 1 }">
-    {% include job-1.html %}
-  </div> 
-  <div class="work-wrapper" :class="{ active : active_el == 2 }">
-    {% include job-2.html %}
-  </div>  
+  {% include job-1.html %}
+  {% include job-2.html %}
+  {% include job-3.html %}
+  {% include job-4.html %}
+  {% include job-5.html %}
+  {% include job-6.html %}
+  {% include job-7.html %}
+  {% include job-8.html %}
+  {% include job-9.html %}
+  {% include job-10.html %}
+  {% include job-11.html %}
   <div class="item span-3" @click="activate(1)" :class="{ active : active_el == 1 }">
     <img src="{{site.baseurl}}/assets/img/logos/cdr.png">
   </div>
   <div class="item span-3" @click="activate(2)" :class="{ active : active_el == 2 }">
     <img src="{{site.baseurl}}/assets/img/logos/spines.png">
   </div>
-  <div class="item span-2">
+  <div class="item span-2" @click="activate(3)" :class="{ active : active_el == 3 }">
     <img src="{{site.baseurl}}/assets/img/logos/iremix.png">
   </div>
-  <div class="item">
+  <div class="item" @click="activate(4)" :class="{ active : active_el == 4 }">
     <img src="{{site.baseurl}}/assets/img/logos/hq.png">
   </div>
-  <div class="item span-2">
+  <div class="item span-2" @click="activate(5)" :class="{ active : active_el == 5 }">
     <img src="{{site.baseurl}}/assets/img/logos/sonicbyte.png">
   </div>
-  <div class="item span-2">
+  <div class="item span-2" @click="activate(6)" :class="{ active : active_el == 6 }">
     <img src="{{site.baseurl}}/assets/img/logos/rrlab.png">
   </div>
-  <div class="item">
+  <div class="item" @click="activate(7)" :class="{ active : active_el == 7 }">
     <img src="{{site.baseurl}}/assets/img/logos/tannora.png">
   </div>
-  <div class="item">
+  <div class="item" @click="activate(8)" :class="{ active : active_el == 8 }">
     <img src="{{site.baseurl}}/assets/img/logos/traginer.png">
   </div>
-  <div class="item">
+  <div class="item" @click="activate(9)" :class="{ active : active_el == 9 }">
     <img src="{{site.baseurl}}/assets/img/logos/bichomania.png">
   </div>
-  <div class="item">
+  <div class="item" @click="activate(10)" :class="{ active : active_el == 10 }">
     <img src="{{site.baseurl}}/assets/img/logos/tivifan.png">
   </div>
-  <div class="item">
+  <div class="item" @click="activate(11)" :class="{ active : active_el == 11 }">
     <img src="{{site.baseurl}}/assets/img/logos/musikete.png">
   </div>
   
