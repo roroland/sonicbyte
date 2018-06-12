@@ -90,9 +90,34 @@
   section{
     background: url('../img/bg-header.jpg') no-repeat;
     background-size: cover;
+    display: flex;
     grid-column: col1Header-start / col2Header-end;
     grid-row: top-start / bg-end;
     z-index: 0;
+    svg{
+      flex: 1 50%;
+      margin: auto;
+      max-width: 20vw;
+    }
+    .rnPath {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: dash 5s ease-out forwards;
+    }
+    
+    @keyframes dash {
+      0%{
+        stroke-dashoffset: 1000;
+        fill: transparent;
+      }
+      50%{
+        fill: transparent;
+      }
+      100%{
+        stroke-dashoffset: 0;
+        fill: rgba($white, .25);
+      }
+    }
   }
   img{
     align-self: flex-end;
