@@ -4,7 +4,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   padding: $component-inner-end;
-  min-height: 25rem;
+  min-height: 15rem;
   justify-content: center;
   
   h2{
@@ -18,10 +18,9 @@
     flex-flow: row wrap;
     grid-column: 1 / -1;
     align-items: center;
-    
-    margin: $component-space*2 0 0;
     li{
       flex: 1;
+      padding: $component-space 0 $component-space*3;
       list-style: none;
       display: inline-block;
       text-align: center;

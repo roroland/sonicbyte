@@ -52,7 +52,7 @@
       flex-flow:row wrap; 
     }
     .skill{
-      padding: $component-space;
+      padding: $component-space $component-space 0;
       min-height: 120px;
       text-align: center;
       flex: 1 120px;
@@ -69,6 +69,7 @@
     .skill-text{
       flex: 1 120px;
       min-height: 60px;
+      padding: $component-space 0 0;
       text-align: center;
       p{
         color: $white;

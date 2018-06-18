@@ -113,9 +113,13 @@
       
       &--content{
         flex: 1 50%;
-        padding: 0 0 $component-space $component-space;
+        padding: 0 $component-space $component-space;
+        overflow-x: hidden;
+        overflow-y: auto; 
         &:first-of-type{
           border-right: 1px solid $light-grey;
+          flex: 1 35%;
+          padding: 0 0 $component-space $component-space;
         }
         h5{
           color: $deep-blue;
@@ -156,15 +160,16 @@
         
         .work-gallery{
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
           grid-gap: $component-space;
           grid-auto-flow: dense;
           picture{
+            grid-column: span 1;
             &:first-of-type{
               grid-column: span 2;
             }
             &:last-of-type{
-              grid-row: span 3;
+              grid-column: span 2;
             }
           }
           img{
