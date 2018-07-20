@@ -20,6 +20,9 @@
       font-weight: 300;
       text-align: center;
     }
+    @media only screen and (max-width: 40em){
+      display: none;
+    }
   }
   &-menu{
     grid-column: col2Header-start / col2Header-end;
@@ -86,6 +89,19 @@
         font-weight: 300;
       }
     }
+    @media only screen and (max-width: 40em){
+      grid-column: col1Header-start / col2Header-end;
+      grid-row: top-start / top-end;
+      .title{
+        writing-mode: lr;
+        transform: rotate(0);
+        margin-top: 0;
+        padding: 0;
+        h1{
+          margin-bottom: $component-space/2;
+        }
+      }
+    }
   }
   section{
     background: url('../img/bg-header.jpg') no-repeat;
@@ -102,7 +118,7 @@
     .rnPath {
       stroke-dasharray: 1000;
       stroke-dashoffset: 1000;
-      animation: dash 5s ease-out forwards;
+      animation: dash 5s ease-out 2s forwards;
     }
     
     @keyframes dash {
