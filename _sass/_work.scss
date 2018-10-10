@@ -18,7 +18,7 @@
 
 .work-portfolio{
   display: grid;
-  background: $light-grey;
+  background: rgba($light-grey, .25);
   grid-template-columns: repeat( auto-fit, [col-start] minmax(8vw, auto) [col-end] );
   grid-auto-rows: 10vh;
   grid-gap: $component-space;
@@ -45,7 +45,7 @@
   }
   &::before {
     border-color: transparent;
-    border-top-color: $light-grey;
+    border-top-color: rgba($light-grey, .25);
     border-width: 16px;
     margin-left: -16px;
   }

@@ -4,8 +4,8 @@
   background-image: linear-gradient(
   to right bottom, transparent 0%,
   transparent 50%,
-  $blue 50%,
-  $blue 100%);
+  $main-color 50%,
+  $main-color 100%);
   grid-template-columns: 1fr  repeat(2, minmax(auto, 28vw)) 1fr;
   padding: $component-inner;
   
@@ -55,7 +55,7 @@
       position: relative;
       &::after,
       &::before{
-        color: $light-blue;
+        color: $light-grey;
         font-size: 10vw;
         line-height: .5;
       }

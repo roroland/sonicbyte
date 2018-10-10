@@ -8,6 +8,7 @@
   grid-template-rows: [top-start] min-content [top-end bg-start] 500px [bg-end pic-start] min-content [pic-end about-start] 400px [about-end];
   
   justify-content: center;
+  
   .subHeader{
     background: rgba($main-color, .75);
     grid-column: col1Header-start / col2Header-end;
@@ -20,50 +21,69 @@
       font-weight: 300;
       text-align: center;
     }
-    @media only screen and (max-width: 40em){
+    @media only screen and (max-width: 48em){
       display: none;
     }
   }
   &-menu{
-    grid-column: col2Header-start / col2Header-end;
-    grid-row: top-start / about-end;
+    
     z-index: 10;
     color: $white;
+    grid-column: col1Header-start / col2Header-end;
+    grid-row: top-start / about-end;
     
     ul{
+      display: flex;
       list-style: none;
-      padding: 9rem 0 0 1rem;
-    }
-    li{
-      margin: $component-space*2 0;
-      line-height: 2;
-      position: relative;
-      z-index: 9;
-      &::after{
-        transition: width .15s, height 1s .25s cubic-bezier(.28,1.36,.67,1.01);
-        content: '';
-        display: block;
-        background: $white;
-        width: 0;
-        right: 0;
-        height: .1em;
-        transform-origin: right;
-        bottom: 0;
-        position: absolute;
-        z-index: -1;
-      }
-      &:hover{
-        &::after{
-          background: $main-color;
-          width: 15vw;
-          height: 2em;
-        }
+      padding: 9rem 0 0 0;
+      li{
+        flex: 1;
+        margin: 0 $component-space/2;
       }
     }
+    
     a{
       font-weight: 800;
       text-shadow: 0 0 2px rgb(50,50,50);
     }
+    
+    @media only screen and (min-width: 48em){
+      grid-column: col2Header-start / col2Header-end;
+      ul{
+        display: inherit;
+        padding: 9rem 0 0 1rem;
+        li{
+          display: block;
+          margin: $component-space*2 0;
+          line-height: 2;
+          position: relative;
+          z-index: 9;
+          &::after{
+            transition: width .15s, height 1s .25s cubic-bezier(.28,1.36,.67,1.01);
+            content: '';
+            display: block;
+            background: $white;
+            width: 0;
+            right: 0;
+            height: .1em;
+            transform-origin: right;
+            bottom: 0;
+            position: absolute;
+            z-index: -1;
+          }
+          &:hover{
+            &::after{
+              background: $main-color;
+              width: 15vw;
+              height: 2em;
+            }
+          }
+        }
+      }
+
+    }
+    
+    
   }  
   &-title--wrapper{
     background: rgba($black, .75);
@@ -89,7 +109,7 @@
         font-weight: 300;
       }
     }
-    @media only screen and (max-width: 40em){
+    @media only screen and (max-width: 48em){
       grid-column: col1Header-start / col2Header-end;
       grid-row: top-start / top-end;
       .title{
